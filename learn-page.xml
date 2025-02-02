@@ -1,0 +1,14 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Learn Words">
+        <NavigationButton text="Back" android.systemIcon="ic_menu_back" />
+    </ActionBar>
+    
+    <StackLayout class="p-8 space-y-4">
+        <Label text="{{ progress }}" class="text-lg text-center text-gray-600" />
+        <Label text="{{ currentWord.original }}" class="text-3xl text-center font-bold" />
+        <Label text="{{ currentWord.translation }}" class="text-2xl text-center text-blue-500" />
+        <Button text="{{ buttonText }}" tap="{{ onNextTap }}" class="bg-blue-500 text-white font-bold py-4 rounded-lg mt-8" />
+        <Label text="{{ completionMessage }}" class="text-xl text-center text-green-500" textWrap="true" 
+               visibility="{{ isCompleted ? 'visible' : 'collapsed' }}" />
+    </StackLayout>
+</Page>

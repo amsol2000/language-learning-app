@@ -1,0 +1,9 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Language Learning" />
+    
+    <StackLayout class="p-8 space-y-4">
+        <Label text="Welcome to Language Learning" class="text-2xl text-center font-bold mb-8" />
+        <Button text="Learn Words" tap="{{ onLearnTap }}" class="bg-blue-500 text-white font-bold py-4 rounded-lg" />
+        <Button text="Take Quiz" tap="{{ onQuizTap }}" class="bg-green-500 text-white font-bold py-4 rounded-lg" />
+    </StackLayout>
+</Page>

@@ -1,0 +1,30 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Quiz">
+        <NavigationButton text="Back" android.systemIcon="ic_menu_back" />
+    </ActionBar>
+    
+    <StackLayout class="p-8 space-y-4">
+        <Label text="{{ progress }}" class="text-lg text-center text-gray-600" />
+        <Label text="{{ question }}" class="text-2xl text-center font-bold mb-4" />
+        
+        <StackLayout class="space-y-2">
+            <Button text="{{ options[0] }}" tap="{{ onOptionTap }}" class="bg-gray-200 py-4 rounded-lg" id="0" />
+            <Button text="{{ options[1] }}" tap="{{ onOptionTap }}" class="bg-gray-200 py-4 rounded-lg" id="1" />
+            <Button text="{{ options[2] }}" tap="{{ onOptionTap }}" class="bg-gray-200 py-4 rounded-lg" id="2" />
+            <Button text="{{ options[3] }}" tap="{{ onOptionTap }}" class="bg-gray-200 py-4 rounded-lg" id="3" />
+        </StackLayout>
+
+        <Label text="{{ feedback }}" class="text-xl text-center" 
+               visibility="{{ feedback ? 'visible' : 'collapsed' }}"
+               class="{{ isCorrect ? 'text-green-500' : 'text-red-500' }}" />
+               
+        <Button text="Next Question" tap="{{ onNextTap }}" 
+                visibility="{{ showNextButton ? 'visible' : 'collapsed' }}"
+                class="bg-blue-500 text-white font-bold py-4 rounded-lg mt-4" />
+                
+        <StackLayout visibility="{{ isQuizCompleted ? 'visible' : 'collapsed' }}" class="mt-4">
+            <Label text="{{ finalScore }}" class="text-2xl text-center text-green-500 font-bold" textWrap="true" />
+            <Label text="Quiz completed! Return to home to practice more." class="text-lg text-center text-gray-600 mt-2" textWrap="true" />
+        </StackLayout>
+    </StackLayout>
+</Page>
